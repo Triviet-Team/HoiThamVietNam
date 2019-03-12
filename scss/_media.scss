@@ -1,0 +1,105 @@
+$main_color: #EB7778;
+
+@mixin o1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+@mixin o2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+@mixin o3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@mixin o4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+// ------------------
+
+
+
+@media (max-width: 1400px) {
+  aside {
+    display: block;
+
+    &:hover {
+      .right-side {
+        width: 100px;
+        z-index: 1;
+        left: 260px;
+        opacity: 1;
+      }
+    }
+  }
+
+  main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+  }
+
+  .left-side {
+    width: 260px;
+    padding: 30px;
+    height: 100vh;
+  }
+
+  .right-side {
+    position: fixed;
+    top: 0;
+    width: 100px;
+    height: 100vh;
+    left: 100px;
+    transition: .5s;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    margin-left: 15px;
+    font-size: calc(9px + 0.4vmax);
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .nav-close {
+    position: absolute;
+    font-size: 24px;
+    top: 10px;
+    right: 10px;
+    color: white;
+  }
+
+}
+
+
+
+@media (max-width: 767px) {
+
+  
+}
+
+@media (max-width: 575px) {
+
+}
+
+@media (max-width: 400px) {
+ 
+}
