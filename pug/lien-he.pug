@@ -1,0 +1,58 @@
+extends _inc
+
+
+block article
+  article
+    section.bread-crumb
+      .container
+        .bc-icons
+          nav(aria-label='breadcrumb')
+            ol.breadcrumb
+              li.breadcrumb-item
+                a(href='index.html') Trang chủ
+              li.breadcrumb-item.active Liên hệ
+
+    section.contact-page
+      .container
+        .row
+          .col-lg-8
+            .box-contact
+              form(action='')
+                .row
+                  .col-md-6
+                    .form-group
+                      label(for='form-name') Họ tên:
+                      input#form-name.form-control(type='text', name='name', placeholder='Nhập họ tên')
+                  .col-md-6
+                    .form-group
+                      label(for='form-phone') Số điện thoại:
+                      input#form-phone.form-control(type='tel', name='phone', placeholder='Nhập số điện thoại')
+                  .col-md-6
+                    .form-group
+                      label(for='form-email') Email:
+                      input#form-email.form-control(type='email', name='email', placeholder='Nhập Email')
+                  .col-md-6
+                    .form-group
+                      label(for='form-title') Tiêu đề:
+                      input#form-title.form-control(type='text', name='title', placeholder='Nhập tiêu đề')
+                  .col-md-12
+                    .form-group
+                      label(for='form-content') Lời nhắn:
+                      textarea#form-content.form-control(name='content', placeholder='Nhập lời nhắn')
+                button.btn.btn-danger(type='submit')
+                  a gửi liên hệ
+          .col-lg-4
+            .info
+              h2 HỘI NGHỀ THẢM VIỆT NAM
+              ul
+                li
+                  i.mdi.mdi-map-marker-outline
+                  | Số 12 Nguyễn Hữu Thọ, Q. Hoàng Mai, Hà Nội
+                li
+                  i.mdi.mdi-phone-classic
+                  | 0912 345 678
+                li
+                  i.mdi.mdi-email-outline
+                  | hoithamvietnam@gmail.com
+              
+

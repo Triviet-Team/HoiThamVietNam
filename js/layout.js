@@ -11,8 +11,8 @@ $('.slider-carousel').owlCarousel({
   animateOut: 'fadeOut',
   animateIn: 'fadeIn',
   navText: [
-    "<i class='mdi mdi-chevron-left'></i>", 
-    "<i class='mdi mdi-chevron-right'></i>"
+    "<i class='mdi mdi-arrow-left'></i>", 
+    "<i class='mdi mdi-arrow-right'></i>"
   ],
   autoplaySpeed: 1000,
 });
@@ -55,14 +55,16 @@ $('.main-image').bind('click', function () {
 $('.member-carousel').owlCarousel({
   loop: true,
   autoplay: true,
+  autoplayTimeout: 5000,
+  autoplayHoverPause: true,
   dots: false,
-  nav: false,
-  items: 3,
+  nav: true,
+  items: 4,
   margin: 30,
   autoplaySpeed: 1000,
   navText: [
-    "<i class='mdi mdi-chevron-left'></i>", 
-    "<i class='mdi mdi-chevron-right'></i>"
+    "<i class='mdi mdi-arrow-left'></i>", 
+    "<i class='mdi mdi-arrow-right'></i>"
   ],
   responsive : {
     0 : {
@@ -74,8 +76,8 @@ $('.member-carousel').owlCarousel({
     992 : {
       items: 3, 
     },
-    1400 : {
-      items: 3,
+    1450 : {
+      items: 4,
     }
   }
 });
@@ -91,10 +93,8 @@ wow.init();
 
 
 $(document).ready(() => {
-  const ww = document.body.clientWidth;
-  const url = window.location.href;
-
-
+  const windownWidth = document.body.clientWidth;
+  const pageUrl = window.location.href;
 
   $('.go-top').click(() => {
     $("html, body").animate({
@@ -103,28 +103,35 @@ $(document).ready(() => {
     return false;
   });
 
-
-  $('.wow').attr('data-wow-duration', '.5s');
-
-
-  $('.toggleMenu').click(() => {
-    $('.nav').addClass('out');
-    $('.overlay-menu').addClass('overlay-in');
-  });
-
-
-  $('.overlay-menu, .nav-close').click(function() {
-    $('.overlay-menu').removeClass('overlay-in');
-    $('.nav').removeClass('out');
-  });
-
- 
-  
   $(".nav a").each( function () {
-    if (url == (this.href)) {
+    if (pageUrl == (this.href)) {
       $(this).closest("a").addClass("active");
-      $(this).parent().parent().parent().parent().addClass("active")
     }
   });
 
+
+  $('.toggleMenu').click(() => {
+    $('aside').addClass('out');
+    $('.overlay-menu').addClass('overlay-in');
+  });
+
+  $('.overlay-menu, .nav-close').click(function() {
+    $('.overlay-menu').removeClass('overlay-in');
+    $('aside').removeClass('out');
+  });
+  
+  for (let item = 0; item < 4; item++) {
+    $('.news .box-news')
+    .eq(item)
+    .addClass(`box-news-${item}`)
+    .attr('data-wow-duration', '.5s')
+    .attr('data-wow-delay', `0.${item}s`);
+  }
+
+  for (let item = 0; item < 8; item++) {
+    $('.product .box-product')
+    .eq(`${item}`)
+    .attr('data-wow-duration', '.5s')
+    .attr('data-wow-delay', `0.${item}s`);
+  }
 });

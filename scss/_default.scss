@@ -50,6 +50,12 @@ $main_color: #EB7778;
   src: url("../fonts/SF-UI-Display-Semibold.otf");
 }
 
+@font-face {
+  font-family: "SF Display";
+  font-weight: bold;
+  src: url("../fonts/SF-UI-Display-Bold.otf");
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -69,7 +75,7 @@ body {
   overflow-x: hidden;
   font-weight: 400;
   font-size: 14px;
-  background: #f4f4f4;
+  background: white;
 
   h1, h2, h3, h4, h5, h6 {
     font-family: inherit;
@@ -183,7 +189,7 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 1049;
     display: none;
     background: rgba($color: black, $alpha: .2);
 
@@ -222,16 +228,17 @@ body {
 }
 
 .bread-crumb {
-  color: black;
+  color: white;
   margin-bottom: 30px;
-  text-align: left;
-  margin-top: 10px;
+  text-align: center;
+  padding: 20px 0;
+  background: black;
 
   .breadcrumb {
     background: none;
     padding: 0;
     margin-bottom: 0;
-
+    justify-content: center;
 
     .breadcrumb-item {
       &:first-child::before {
@@ -297,124 +304,49 @@ body {
   background-position: center;
   background-size: cover;
   color: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
   
-  .container {
-    display: grid;
-    grid-template-columns: 350px calc(100% - 380px);
-    grid-column-gap: 30px;
+  h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
 
-  .contact {
-    .box-contact {
-      text-align: center;
-      height: 130px;
-      padding: 15px 30px;
-      transition: .3s;
+
+  ul {
+    li {
+      padding-bottom: 15px;
+
+      a {
+        color: white;
+        transition: .3s;
+
+        &:hover {
+          color: $main_color;
+        }
+      }
 
       i {
-        font-size: 30px;
+        padding-right: 10px;
         color: $main_color;
-        margin-bottom: 10px;
-        transition: .3s;
-      }
-
-      h5 {
-        height: 50px;
-        vertical-align: middle;
-      }
-
-      &.address {
-        background: #383838;
-
-        &:hover {
-          background: $main_color;
-          
-          i {
-            color: white;
-          }
-        }
-      }
-
-      &.phone {
-        background: #252525;
-
-        &:hover {
-          background: $main_color;
-          
-          i {
-            color: white;
-          }
-        }
-      }
-
-      &.email {
-        background: #161616;
-
-        &:hover {
-          background: $main_color;
-          
-          i {
-            color: white;
-          }
-        }
-      }
-
-      &.name {
-        background: $main_color;
-        position: relative;
-
-        h2 {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 250px;
-          text-transform: uppercase;
-          font-weight: bold;
-        }
       }
     }
   }
 
-  .right {
-    margin-top: 50px;
-
-    h4 {
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .info h5 {
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    p {
-      color: #cccccc;
-    }
-
-    ul {
-      li {
-        padding-bottom: 15px;
-
-        a {
-          color: #cccccc;
-          transition: .3s;
-
-          &:hover {
-            color: $main_color;
-          }
-        }
-      }
-    }
-
-    .copyright {
-      padding: 15px 0;
-      border-top: 1px solid #595959;
-      margin-top: 30px;
+  .category {
+    ul li {
+      width: 49%;
+      display: inline-block;
     }
   }
+}
+
+
+.copyright {
+  padding: 15px;
+  background: $main_color;
+  color: white;
 }
 
 aside {
@@ -424,7 +356,7 @@ aside {
   color: white;
   display: grid;
   grid-template-columns: 300px 100px;
-  z-index: 10;
+  z-index: 1051;
 }
 
 main {
